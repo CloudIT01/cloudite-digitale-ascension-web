@@ -10,7 +10,10 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, icon: Icon }: ServiceCardProps) {
   return (
-    <div className="service-card group">
+    <div className="service-card group relative overflow-hidden">
+      {/* Adding subtle decorative element */}
+      <div className="absolute -top-10 -right-10 w-20 h-20 bg-cloud-purple/5 rounded-full" />
+      
       <div className="flex items-center justify-center mb-4 w-12 h-12 rounded-lg bg-cloud-purple/10 text-cloud-purple group-hover:scale-110 transition-transform duration-300">
         <Icon size={24} />
       </div>

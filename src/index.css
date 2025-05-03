@@ -107,10 +107,10 @@
     border border-transparent hover:border-cloud-purple hover:shadow-xl 
     hover:translate-y-[-4px] hover:bg-gradient-to-b hover:from-white hover:to-purple-50 
     dark:hover:from-gray-800 dark:hover:to-gray-700;
-    /* Adding frame with shadow for day mode */
-    @apply border-[#e0e0e0] shadow-[0_4px_12px_rgba(102,40,200,0.08)];
-    /* Slightly different shadow for dark mode */
-    @apply dark:border-gray-700 dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)];
+    /* Enhanced frame with stronger shadow for day mode */
+    @apply border-2 border-[#e0e0e0] shadow-[0_8px_20px_rgba(102,40,200,0.15)];
+    /* Enhanced shadow for dark mode */
+    @apply dark:border-gray-700 dark:shadow-[0_8px_20px_rgba(0,0,0,0.3)];
   }
 
   .digital-rain {
