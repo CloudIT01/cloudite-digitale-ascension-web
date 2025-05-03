@@ -5,7 +5,8 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, Calendar } from 'lucide-react';
+import { CalendlyModal } from '@/components/CalendlyModal';
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -83,7 +84,12 @@ export function Navbar() {
             <div className="flex items-center space-x-2">
               <ThemeToggle />
               <LanguageSwitcher />
-              <Button className="btn-primary ml-2">{t('ctaButton')}</Button>
+              <CalendlyModal>
+                <Button className="btn-primary ml-2 flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {t('ctaButton')}
+                </Button>
+              </CalendlyModal>
             </div>
           </div>
 
@@ -134,7 +140,12 @@ export function Navbar() {
               >
                 {t('blog')}
               </Link>
-              <Button className="btn-primary">{t('ctaButton')}</Button>
+              <CalendlyModal>
+                <Button className="btn-primary flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {t('ctaButton')}
+                </Button>
+              </CalendlyModal>
             </div>
           </div>
         )}

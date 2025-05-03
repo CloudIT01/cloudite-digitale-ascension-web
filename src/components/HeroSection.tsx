@@ -2,7 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Calendar } from 'lucide-react';
+import { CalendlyModal } from '@/components/CalendlyModal';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -99,9 +100,12 @@ export function HeroSection() {
             {t('heroSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button className="btn-primary text-lg px-8 py-6">
-              {t('ctaButton')}
-            </Button>
+            <CalendlyModal>
+              <Button className="btn-primary text-lg px-8 py-6 flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                {t('ctaButton')}
+              </Button>
+            </CalendlyModal>
             <Button 
               variant="outline" 
               className="px-6 py-3 text-cloud-purple border-cloud-purple hover:bg-cloud-purple/10 dark:border-cloud-lightViolet dark:text-cloud-lightViolet dark:hover:bg-cloud-lightViolet/10"
