@@ -28,10 +28,10 @@ export function CalendlyModal({ children }: CalendlyModalProps) {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Calendar className="h-5 w-5" />
-            {t('scheduleCall')}
+            {t('ctaButton')}
           </DialogTitle>
           <DialogDescription>
-            {t('scheduleCallDesc')}
+            {t('heroSubtitle')}
           </DialogDescription>
         </DialogHeader>
         <div className="mt-4 h-[500px]">
