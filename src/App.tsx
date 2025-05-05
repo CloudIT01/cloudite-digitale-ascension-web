@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -33,6 +34,7 @@ const App = () => (
                 <Route path="/a-propos" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/mentions-legales" element={<LegalNotice />} />
                 <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
                 <Route path="/politique-des-cookies" element={<CookiePolicy />} />

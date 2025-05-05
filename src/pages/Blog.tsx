@@ -6,41 +6,13 @@ import { Footer } from '@/components/Footer';
 import { Newsletter } from '@/components/Newsletter';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
-
-const blogPosts = [
-  {
-    id: 'copywriting-email-marketing',
-    title: 'L\'art du copywriting et de l\'email marketing',
-    excerpt: 'Comment créer des connexions authentiques avec votre audience à travers des mots qui convertissent.',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80',
-    date: '2023-05-15',
-    author: 'Sophie Martin'
-  },
-  {
-    id: 'sales-funnels',
-    title: 'Construire des entonnoirs de vente qui convertissent',
-    excerpt: 'Les étapes essentielles pour transformer vos visiteurs en clients fidèles avec des stratégies d\'entonnoir optimisées.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
-    date: '2023-05-10',
-    author: 'Marc Dupont'
-  },
-  {
-    id: 'landing-pages',
-    title: 'L\'anatomie d\'une landing page parfaite',
-    excerpt: 'Les éléments clés d\'une page d\'atterrissage conçue pour convertir et captiver votre audience.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80',
-    date: '2023-05-05',
-    author: 'Julie Leroy'
-  },
-  {
-    id: 'social-media-management',
-    title: 'Maîtriser la gestion des réseaux sociaux',
-    excerpt: 'Comment engager efficacement votre audience sur LinkedIn, Facebook, Instagram et plus.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-    date: '2023-04-28',
-    author: 'Thomas Bernard'
-  },
-];
+import { blogPosts } from '@/data/blogPosts';
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink 
+} from '@/components/ui/pagination';
 
 const Blog = () => {
   const { t } = useLanguage();
@@ -77,7 +49,7 @@ const Blog = () => {
               {blogPosts.map((post) => (
                 <article 
                   key={post.id}
-                  className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px]"
+                  className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border-2 border-cloud-purple shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px]"
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -106,6 +78,17 @@ const Blog = () => {
                   </div>
                 </article>
               ))}
+            </div>
+
+            {/* Pagination */}
+            <div className="mt-12">
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationLink href="#" isActive>1</PaginationLink>
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
           </div>
         </section>
