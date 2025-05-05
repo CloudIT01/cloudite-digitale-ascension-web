@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -109,20 +110,26 @@
     dark:hover:from-gray-800 dark:hover:to-gray-700;
   }
 
-  .digital-rain {
-    @apply absolute w-2 h-2 bg-cloud-lightViolet opacity-70 rounded-full animate-rain;
+  /* Modern 3D perspective */
+  .perspective {
+    @apply perspective-1000;
   }
 
-  .digital-rain-fast {
-    @apply animate-[rain_4s_linear_infinite];
+  .translate-z-8 {
+    transform: translateZ(8px);
   }
 
-  .digital-rain-medium {
-    @apply animate-[rain_7s_linear_infinite];
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, #6628c8 1px, transparent 1px);
+    background-size: 30px 30px;
   }
 
-  .digital-rain-slow {
-    @apply animate-[rain_10s_linear_infinite];
+  /* Floating dots grid */
+  .grid-dots {
+    @apply absolute inset-0 opacity-20;
+    background-image: radial-gradient(#6628c8 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
   /* Animated hover underline effect */
@@ -141,5 +148,41 @@
 
   .active-nav-link::after {
     @apply w-full;
+  }
+}
+
+/* New animations for modern hero section */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delay {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delay {
+    animation: float-delay 8s ease-in-out infinite 1s;
+  }
+  
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 8s ease infinite;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
   }
 }
