@@ -34,12 +34,16 @@ export function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-md backdrop-blur-sm' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-6 md:py-4"
     >
-      <div className="container mx-auto px-4 py-3">
-        <nav className="flex items-center justify-between">
+      <div 
+        className={`container mx-auto rounded-xl transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/90 dark:bg-gray-900/90 shadow-lg backdrop-blur-sm' 
+            : 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm'
+        }`}
+      >
+        <nav className="flex items-center justify-between px-4 py-2">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="flex items-center space-x-2">
@@ -153,3 +157,4 @@ export function Navbar() {
     </header>
   );
 }
+
