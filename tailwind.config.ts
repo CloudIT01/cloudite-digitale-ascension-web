@@ -103,6 +103,18 @@ export default {
 				'rotate-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' },
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' },
+				},
+				'bounce-horizontal': {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'50%': { transform: 'translateX(-15px)' },
+				},
+				'scale-pulse': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.1)' },
 				}
 			},
 			animation: {
@@ -111,6 +123,9 @@ export default {
 				'float': 'float 4s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'shimmer': 'shimmer 8s ease-in-out infinite',
+				'bounce-horizontal': 'bounce-horizontal 6s ease-in-out infinite',
+				'scale-pulse': 'scale-pulse 7s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'cloud-gradient': 'linear-gradient(135deg, #6628c8, #b767d5, #0032f8)',

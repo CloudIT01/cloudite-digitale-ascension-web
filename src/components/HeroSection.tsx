@@ -28,9 +28,56 @@ export function HeroSection() {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-cloud-purple/30 to-cloud-blue/20 blur-3xl animate-float"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-gradient-to-l from-cloud-lightViolet/20 to-cloud-purple/10 blur-3xl animate-float-delay"></div>
         
-        {/* Geometric shapes */}
+        {/* Original geometric shapes */}
         <div className="absolute top-1/4 right-1/5 w-32 h-32 border border-cloud-purple/30 rounded-lg rotate-12 animate-rotate-slow"></div>
         <div className="absolute bottom-1/4 left-1/5 w-20 h-20 border border-cloud-blue/30 rounded-full animate-pulse-slow"></div>
+        
+        {/* NEW: Additional contemporary geometric shapes */}
+        {/* 1. Triangular shape with gradient and animation */}
+        <div className="absolute top-[15%] right-[15%] w-36 h-36 animate-float" style={{ 
+          clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+          background: "linear-gradient(225deg, #b767d5 0%, #6628c8 100%)",
+          opacity: 0.25
+        }}></div>
+        
+        {/* 2. Rotating hexagon with glow effect */}
+        <div className="absolute bottom-[20%] right-[30%] w-28 h-28 shadow-lg animate-rotate-slow" style={{ 
+          clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+          background: "linear-gradient(90deg, #2e3192 0%, #0032f8 100%)",
+          boxShadow: "0 0 15px #0032f8",
+          opacity: 0.2
+        }}></div>
+        
+        {/* 3. Pulsing wave pattern */}
+        <svg 
+          className="absolute top-[30%] left-[10%] w-40 h-40 animate-pulse-slow opacity-30"
+          viewBox="0 0 100 100" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            d="M0,50 Q25,30 50,50 Q75,70 100,50" 
+            fill="none" 
+            stroke="#b767d5" 
+            strokeWidth="2"
+            strokeDasharray="5,5"
+          />
+          <path 
+            d="M0,55 Q25,35 50,55 Q75,75 100,55" 
+            fill="none" 
+            stroke="#6628c8" 
+            strokeWidth="2"
+            strokeDasharray="3,3"
+            style={{ animationDelay: "0.5s" }}
+          />
+          <path 
+            d="M0,45 Q25,25 50,45 Q75,65 100,45" 
+            fill="none" 
+            stroke="#0032f8" 
+            strokeWidth="2"
+            strokeDasharray="7,3"
+            style={{ animationDelay: "0.2s" }}
+          />
+        </svg>
         
         {/* Floating dots grid */}
         <div className="grid-dots"></div>
@@ -89,3 +136,4 @@ export function HeroSection() {
     </div>
   );
 }
+
