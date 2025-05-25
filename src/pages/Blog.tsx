@@ -22,6 +22,16 @@ const Blog = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Enhanced image mapping for better article relevance
+  const getArticleImage = (postId: string, defaultImage: string) => {
+    const imageMap: { [key: string]: string } = {
+      '1': 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80', // Sales funnel - monitor with analytics
+      '2': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80', // Social media - woman using laptop for social media
+    };
+    
+    return imageMap[postId] || defaultImage;
+  };
+
   return (
     <>
       <Navbar />
@@ -53,7 +63,7 @@ const Blog = () => {
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img 
-                      src={post.image} 
+                      src={getArticleImage(post.id, post.image)} 
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
