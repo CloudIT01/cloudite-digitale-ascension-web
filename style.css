@@ -1,0 +1,142 @@
+
+/*
+Theme Name: CloudITechnologies
+Description: A modern, responsive WordPress theme for CloudITechnologies digital marketing agency. Features dark mode, multilingual support, and advanced animations.
+Version: 1.0.0
+Author: CloudITechnologies
+Text Domain: clouditechnologies
+Domain Path: /languages
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: business, portfolio, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+/*
+This file is required by WordPress themes but all styling is handled by Tailwind CSS
+which is loaded via CDN in functions.php. Custom styles are added via wp_head hook.
+
+The theme uses:
+- Tailwind CSS for all styling
+- Custom CSS animations for hero section
+- Responsive design with mobile-first approach
+- Dark mode support
+- Custom color palette for CloudITechnologies branding
+*/
+
+/* Basic reset and WordPress required styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* WordPress specific styles */
+.screen-reader-text {
+    position: absolute !important;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Gallery styles */
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+/* Comment styles */
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+/* Accessibility */
+.wp-caption-text {
+    text-align: center;
+}
+
+/* WordPress blocks support */
+.wp-block-image {
+    margin: 0 0 1em 0;
+}
+
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+    margin-top: 0.3em;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
